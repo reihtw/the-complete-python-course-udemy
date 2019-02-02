@@ -15,7 +15,7 @@ def create_book_table():
         connection.close()
 
 def add_book(name, author):
-        # *,0); DROP TABLE books;
+        # *,0); DROP TABLE books; -> SQL Injection Vulnerability if change strings directly
         connection = sqlite3.connect('data.db')
         cursor = connection.cursor()
 
@@ -26,34 +26,30 @@ def add_book(name, author):
 
 
 def list_book():
-        with open('books.json', 'r') as file_json:
-                return json.load(file_json)        
+        connection = sqlite3.connect('data.db')
+        cursor = connection.cursor()
+
+        cursor.execute('SELECT * FROM books')
+        books = [{'name': row[0], 'author': row[1], 'read': row[2]} for row in cursor.fetchall()] # [(name, author, read), (name, author, read)]
+
+        connection.close()
+        return books      
 
 
 def read_book(name):
-        books = list_book()
-        for book in books:
-                if book['name'] == name:
-                        book['read'] = True
-                        return f"[*] The book \"{book['name']}\" was marked as read."
-        return '[-] The book was not found.'
+        connection = sqlite3.connect('data.db')
+        cursor = connection.cursor()
 
+        cursor.execute('UPDATE books SET read=1 WHERE name=?', (name,))
+
+        connection.commit()
+        connection.close()
 
 def del_book(name):
-        books = list_book()
-        books = [book for book in books if book['name'] != name]
-        save_all_books(books)
+        connection = sqlite3.connect('data.db')
+        cursor = connection.cursor()
 
+        cursor.execute('DELETE FROM books WHERE name=?', (name,))
 
-#def del_book(name):
-#    i = 0
-#    for book in books:
-#        if book['name'] == name:
-#            books.pop(i)
-#            return '[*] The book was deleted successfuly.'
-#    return '[-] The book was not found.'
-
-
-def save_all_books(books):
-        with open('books.json', 'w') as book:
-                json.dump(books, book)
+        connection.commit()
+        connection.close()

@@ -48,11 +48,11 @@ read: {read}
 
 def prompt_read_book():
     name = input('Please, insert the name of the book to mark as read: ')
-    print(database.read_book(name))
+    database.read_book(name)
 
 
 def prompt_delete_book():
-    name = input('Please inset the name of the book to delete: ')
+    name = input('Please insert the name of the book to delete: ')
     database.del_book(name)
 
 
