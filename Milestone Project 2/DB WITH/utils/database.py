@@ -4,7 +4,6 @@ import sqlite3
 Concerned with storing and retrieving books from a list.
 """
 
-books_file = 'books.json'
 
 def create_book_table():
         connection = sqlite3.connect('data.db')
