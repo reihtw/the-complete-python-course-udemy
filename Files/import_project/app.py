@@ -1,4 +1,4 @@
-from utils.find import find_in
+import utils.common.file_operations
 
 '''
 save_to_file('Dusan', 'data.txt')

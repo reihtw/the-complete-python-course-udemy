@@ -1,4 +1,4 @@
-from .common.file_operations import read_file
+#from .common.file_operations import read_file
 
 def find_in(iterable, finder, expected):
     for i in iterable:
@@ -9,4 +9,5 @@ def find_in(iterable, finder, expected):
 class NotFoundError(Exception):
     pass
 
-print(__name__)
+if __name__ == '__main__':
+    print(find_in(['Rolf', 'Jose', 'Jen'], lambda x: x, 'Jose'))
