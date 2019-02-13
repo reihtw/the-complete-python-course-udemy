@@ -35,7 +35,7 @@ friends.append('Jen')
 print(id(friends))
 
 """
-integers
+integers -> all function return new int objects
 floats
 strings
 tuples
