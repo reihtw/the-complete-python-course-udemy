@@ -4,9 +4,22 @@
 * ordereddict
 * namedtuple
 * deque
+
+The main purpose od this video is to make you aware that these things exist,
+in case we have to use them later on (or when you encounter a situation where
+using one of these would be useful).
+
+Normally what happens in those situations is we struggle to build our own thing
+to do what we nees it to do. Knowing that these exist could save you a lot of
+effort!
+
 """
 
-# Counter
+## Counter
+"""
+Allow us to count things. Give it a iterable or a mapping (such as a dict) and
+ir will turn into a counter of elements.
+"""
 from collections import Counter
 
 device_temperatures = [13.5, 14.0, 14.0, 14.5, 14.5, 14.5, 15.0, 16.0]
@@ -14,7 +27,11 @@ device_temperatures = [13.5, 14.0, 14.0, 14.5, 14.5, 14.5, 15.0, 16.0]
 temperature_counter = Counter(device_temperatures)
 print(temperature_counter[14.5])
 
-# defaultdict
+## defaultdict
+"""
+The 'defaultdict' never raises a 'KeyError'. Instead, it returns the value returned
+by the function spcified when the object was instantied.
+"""
 from collections import defaultdict
 
 coworkers = [('Rolf', 'MIT'), ('Jen', 'Oxford'), ('Rolf', 'Cambridge'), ('Charlie', 'Manchester')]
@@ -39,7 +56,7 @@ for person, company in other_coworkers:
 print(coworker_companies[coworkers[0]])
 print(coworker_companies['Rolf'])
 
-#ordereddict
+## ordereddict - useless but is good to know that it exists
 from collections import OrderedDict
 
 o = OrderedDict()
@@ -56,6 +73,12 @@ o.popitem()
 print(o)
 
 #namedtuple
+"""
+A namedtuple is another object that we can use like a tuple, where each of the elements of the tuple has a name. In addition, the tuple itself also has a name.
+
+It improves on tuples by making more explicit what it means.
+"""
+
 from collections import namedtuple
 
 account = ('checking', 1850.90)
