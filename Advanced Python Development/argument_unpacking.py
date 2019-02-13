@@ -26,3 +26,16 @@ for t in transactions:
     add_balance(*t)
 
 print(accounts)
+
+class User:
+    def __init__(self, username, password):
+        self.username = username
+        self.password = password
+
+# imagine these users are coming from a database...
+users = [
+    {'username': 'rolf', 'password': '123'},
+    {'username': 'tecladoisawesome', 'password': 'youaretoo'}
+]
+
+user_objects = [User(**data) for data in users]
