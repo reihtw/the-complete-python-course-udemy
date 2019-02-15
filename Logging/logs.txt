@@ -1,0 +1,8 @@
+2019-02-15 19:17:18,486 INFO     [introduction.py:10] This will not show up.
+2019-02-15 19:17:18,486 WARNING  [introduction.py:11] This will.
+2019-02-15 19:17:18,486 DEBUG    [introduction.py:12] This is a debug message.
+2019-02-15 19:17:18,486 CRITICAL [introduction.py:13] A critical error occurred.
+15-02-2019 19:20:39 INFO     [introduction.py:12] This will not show up.
+15-02-2019 19:20:39 WARNING  [introduction.py:13] This will.
+15-02-2019 19:20:39 DEBUG    [introduction.py:14] This is a debug message.
+15-02-2019 19:20:39 CRITICAL [introduction.py:15] A critical error occurred.
