@@ -1,0 +1,5 @@
+Each book: div.page_inner section li.col-xs-6
+Name: article.product_pod h3 a
+Link: article.product_pod h3 a
+Price: article.product_pod p.price_color
+Rating: article.product_pod p.star-rating
