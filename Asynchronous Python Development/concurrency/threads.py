@@ -12,7 +12,7 @@ def ask_user():
 
 def complex_calculation():
     start = time.time()
-    print('Started calculation...')
+    print('Started calculating...')
     [x**2 for x in range(20000000)]
     print(f'complex_calculation, {time.time() - start}')
 
@@ -24,7 +24,7 @@ print(f'Single thread total time: {time.time() - start}')
 
 
 thread1 = Thread(target=complex_calculation)
-thread2 = Thread(target=complex_calculation)
+thread2 = Thread(target=ask_user)
 
 start = time.time()
 
