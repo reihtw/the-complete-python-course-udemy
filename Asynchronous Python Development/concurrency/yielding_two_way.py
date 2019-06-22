@@ -10,13 +10,10 @@ def greet(g):
         try:
             friend = next(g)
             yield f'HELLO {friend}'
-        except:
+        except StopIteration:
             pass
 
 friends_generator = get_friend()
 g = greet(friends_generator)
-
-print(next(g))
-print(next(g))
 print(next(g))
 print(next(g))
