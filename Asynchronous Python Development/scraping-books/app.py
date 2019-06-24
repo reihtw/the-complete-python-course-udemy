@@ -17,7 +17,7 @@ logger.info('Loading books list...')
 
 loop = asyncio.get_event_loop()
 
-books = page.books
+books = []
 
 async def fetch_page(session, url):
     page_start = time.time()
