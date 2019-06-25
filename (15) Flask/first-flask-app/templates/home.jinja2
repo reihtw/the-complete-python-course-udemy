@@ -1,0 +1,18 @@
+{% extends "base.jinja2" %}
+
+{% block title %}
+<title>Minimalist Blog</title>
+{% endblock title%}
+
+{% block content %}
+<h1>Welcome to your declutter blog.</h1>
+<h2>Posts</h2>
+
+<ul>
+    {% for post_id, post in posts.items() %}
+        <li><a href="{{ url_for('post', post_id=post_id) }}">{{ post['title'] }}</a></li>
+    {% endfor %}
+</ul>
+
+<a href="{{ url_for('create')}}">Create a new post</a>
+{% endblock content %}
